@@ -7,6 +7,21 @@ import static org.junit.Assert.assertEquals;
 
 public class IntegerToRomanTest {
 
+    @Test(expected = IllegalArgumentException.class)
+    public void provaNumeroNegative()  {
+        IntegerToRoman.convert(-1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void provaNumeroZero()  {
+        IntegerToRoman.convert(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void provaNumeroSuperioreMille()  {
+        IntegerToRoman.convert(1001);
+    }
+
     @Test
     public void provaNumeroMille()  {
         assertEquals("M", IntegerToRoman.convert(1000));
