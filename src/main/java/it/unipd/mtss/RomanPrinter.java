@@ -9,6 +9,28 @@ public class RomanPrinter {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
     private static String printAsciiArt(String romanNumber) {
+        String[] m = """
+                 __  __    \s
+                |  \\/  |  \s
+                | \\  / |  \s
+                | |\\/| |  \s
+                | |  | |   \s
+                |_|  |_|   \s""".split("\n");
+        String[] d = """
+                 _____   \s
+                |  __ \\  \s 
+                | |  | | \s
+                | |  | | \s
+                | |__| | \s
+                |_____/  \s""".split("\n");
+        String[] c = """
+                  _____  \s
+                 / ____| \s
+                | |      \s
+                | |      \s
+                | |____  \s
+                 \\_____| \s
+                """.split("\n");
         String[] l = """
                  _       \s
                 | |      \s
@@ -41,6 +63,15 @@ public class RomanPrinter {
         for(int k = 0; k < i.length; k++){
             for(int j = 0; j < romanNumber.length(); j++){
                 switch (romanNumber.charAt(j)){
+                    case 'M':
+                        daStampare += m[k];
+                        break;
+                    case 'D':
+                        daStampare += d[k];
+                        break;
+                    case 'C':
+                        daStampare += c[k];
+                        break;
                     case 'L':
                         daStampare += l[k];
                         break;
